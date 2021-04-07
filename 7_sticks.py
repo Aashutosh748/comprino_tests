@@ -7,16 +7,24 @@
 6. yes if area present.
 '''
 
-t=int(input()) #total no of sticks
-for i in range(t): #choosing sticks
-    c,d,l=map(int,input().split()) #forming the stuck, area and length
-    tot=c*4+d*4 #total area 
-    if(l%4==0 and l<=tot): #if sticks ok
-        if(c<=2*d and l>=d*4): #if area matches
-            print("yes") #yes
-        elif(c>2*d and l>=(c-2*d+d)*4): #for a rectangle area at least 4 sticks are reqd
-            print("yes")
-        else:
-            print("no")
+for _ in range(int(input())): #total no of sticks
+    n = int(input())
+    a1 = list(map(int, input().split()))
+    a2 = list(set(a1))
+    a3 = []
+    for i in a2:  #choosing sticks
+        c = a1.count(i)
+        if c % 2 == 0: #total area 
+            a3 += [i for _ in range(c)]
+        elif c > 1:
+            a3 += [i for _ in range(c - 1)]
+    if len(a3) == 2: #if area matches
+        print(-1)
     else:
-        print("no")
+        c = max(a3) #if sticks ok
+        mx1 = a3.pop(a3.index(c)) #forming the stuck, area and length
+        a3.remove(c)
+        c = max(a3)
+        mx2 = a3.pop(a3.index(c)) #for a rectangle area at least 4 sticks are reqd
+        print(mx1 * mx2)
+        
