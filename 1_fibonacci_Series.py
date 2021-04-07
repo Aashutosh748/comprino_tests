@@ -1,4 +1,4 @@
-'''Pseudo code:
+tat'''Pseudo code:
 1. take input from user string.
 2. create lists to hold the strings.
 3. create empty list to hold the answer.
@@ -7,8 +7,8 @@
 6. check if the string is less than 3.
 7. if less than 3 then dynamic.
 8. check fibbonacci series.
-9. If in series then Dynamic.
-10. if not in series then Not.
+9. If permutation satisfies in series then Dynamic.
+10. if not permutation in series then Not.
 
 '''
 
